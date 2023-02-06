@@ -1,0 +1,105 @@
+
+insert
+<form method="get" accept-charset="utf-8" action="php/insert_gnuboard.studying.php">
+	<fieldset>
+		<legend>delete category, subject, contents from gnuboard.studying</legend>
+  	category: <input type="text" name="category" >
+	  subject: <input type="text" name="subject" >
+  	contents: <input type="text" name="contents">
+  	<input type="submit" value="삭제"  >
+	</fieldset>
+</form>
+
+delete
+<form method="get" accept-charset="utf-8" action="delete_studying.php">
+	<fieldset>
+		<legend>delete category, subject, contents from gnuboard.studying</legend>
+  	category: <input type="text" name="category" >
+	  subject: <input type="text" name="subject" >
+  	contents: <input type="text" name="contents">
+  	<input type="submit" value="삭제"  >
+	</fieldset>
+</form>
+
+
+<?php 
+    $mysql_hostname = 'localhost';
+    $mysql_username = 'www6';
+    $mysql_password = '1488';
+    $mysql_port = '3306';
+    $mysql_charset = 'utf8';
+    $mysql_db = 'gnuboard';
+
+    //연동 부분이다.
+    $connect = mysqli_connect($mysql_hostname, $mysql_username, $mysql_password,$mysql_db);
+
+    if($connect->connect_errno){
+        echo '[연결실패] : '.$connect->connect_error.'\n';
+    }else{
+        echo '[연결성공!] ';
+        echo '<br><br>';
+    }
+    
+    
+    
+    //print_r(mysqli_get_connection_stats($connect));
+    printf("System status : %s\n", mysqli_stat($connect));
+    //echo mysqli_state($connect).$_['Uptime'];
+    printf("<br>Client library version : %d\n", mysqli_get_client_version());
+    printf("<br>Client client info : %s\n", mysqli_get_client_info());
+    printf("<br>Server version : %d\n", mysqli_get_server_version($connect));
+    printf("<br>Server info: %s\n", mysqli_get_server_info($connect));
+    printf("<br>Host info : %s\n", mysqli_get_host_info($connect));
+    printf("<br>Protocol version : %d\n", mysqli_get_proto_info($connect));
+    printf("<br>SERVER['REMOTE_ADDR'] : %d\n", $_SERVER['REMOTE_ADDR']);
+    printf("<br>SERVER['DOCUMENT_ROOT'] : %d\n", $_SERVER['DOCUMENT_ROOT']);
+    printf("<br>SERVER['HTTP_USER_AGENT'] : %d\n", $_SERVER['HTTP_USER_AGENT']);
+
+    
+  //         select category, subject, contents, date_format(updated_date,'%y-%m-%d') from studying order by updated_date desc;
+   $sql = "select category, subject, contents  from studying order by updated_date desc;";
+   $result = mysqli_query($connect, $sql);
+   // 반환된 전체 레코드 수 저장.
+   $total_record = mysqli_num_rows($result);
+
+   // JSONArray 형식으로 만들기 위해서...
+   echo "<br><br>\"status\":\"OK\",\"num_results\":\"$total_record\",\"results\"";
+
+   $fields_count = mysqli_num_fields($result);
+   $fields = mysqli_fetch_fields($result);
+   
+   echo "<br><br>fields_count : ",$fields_count; 
+
+   echo "<br><br>"; 
+   echo "record_count : ",$total_record;
+   
+   echo "<br><br>"; 
+   echo "<table border='1'>";
+   echo "<tr>";
+   foreach ($fields as $val) {
+	   echo "<td>";
+	   printf("%s",   $val->name);
+  //          printf("Table:     %s\n",   $val->table);
+    //        printf("Max. Len:  %d\n",   $val->max_length);
+      //      printf("Length:    %d\n",   $val->length);
+        //    printf("charsetnr: %d\n",   $val->charsetnr);
+          //  printf("Flags:     %d\n",   $val->flags);
+	   //printf("Type:      %d\n\n", $val->type);
+	   echo "</td>";//
+        }
+  echo "</tr>";
+  
+   for ($i=0; $i < $total_record; $i++){
+	   
+   $row = mysqli_fetch_array($result);
+	   
+	   //mysqli_data_seek($result, $i);
+   echo "<tr><td>$row[0]</td><td>$row[1]</td><td>$row[2]</td></tr>";
+   }
+    
+   echo "</table>";
+   $q = mysqli_close($connect);
+   if( $q == "1" ){echo "<br>connection closed by 1. bye bye!<br>";};
+   if( $q == "true" ){echo "<br>connection closed by true. bye bye!<br>";};
+   echo $q;
+?>

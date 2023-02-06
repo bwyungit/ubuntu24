@@ -1,0 +1,29 @@
+<html>
+<head></head>
+<body>
+	<h1> Hellow Everybody!!<br>
+	Here is woon's Website	Glad to meet you</h1>
+<div style="background-color:cyan"  >
+	<a href="a.html"><p>a.html</p></a>
+	<a href="/aaa/aaa.html"> <p> /aaa/aaa.html </p></a>
+</div>
+<div style="width:250px; height:80px; background-color:#CF0" >
+	<a href="index.php"> <p> index.php </p></a>
+	<a href="/gnuboard/install/index.php"> <p> /gnuboard/install/index.php </p></a><br>
+</div>
+<div style="background-color:red" >
+	<a href="a.php"> <p>a.php</p></a>
+	<a href="aa.php"> <p>aa.php</p></a></div>
+<div style="width:100px; height:60px; border:1px solid black; background-color:yellow">
+	<a href="insert.php"> insert.php</a>
+	<a href="delete.php"> delete.php</a></div>
+<div style="width:200px; height:70px; border:3px solid black; float:left">
+	<a href="phpmyadmin">phpmyadmin</a>
+	<a href="phpnet.php">phpnet.php</a>
+	<a href="sample1.php">sample1.php</a></div>
+<div style="width:300px; height:100px; border:10px solid red; background-color:green; float:left; margin:10px;">
+	<a href="b.php"> <p style="color:red;font-size:20px;">b.php</p></a>
+	<a href="c.php"> c.php</a><br>
+</div>
+</body>
+</html>

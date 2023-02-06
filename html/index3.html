@@ -1,0 +1,94 @@
+<? 
+$txt = "Hi";  
+echo $txt."(this is writed from php !!!)"; 
+?>
+
+<!DOCTYPE html>
+<!--filename=./index3.html-->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>index3.html</title>
+</head>
+<body>
+
+	<?php 
+	$ttt="good";
+	   echo "<h1>$txt</h1>";
+	   echo "this is from php";
+	?>
+
+<p>this page is ./index3.html  : this is from html</p>
+<h1> <?php echo $txt ?>  555    </h1>
+
+<script>
+	document.write("<h1>Hi</h1> : this if from javascript!!" );
+
+</script>
+<?php
+	$txt = "Hello";
+	echo "<br>123".$txt."<br> this is from php!!";	
+?>
+
+
+<!--
+<script> 
+	alert('this page is ./index3.html')  
+	document.write("hi");
+	document.write("hi");
+	document.write("hi");
+</script>
+-->
+<form method="get" accept-charset="utf-8" action="php/insert_gnuboard.studying.php">
+	<fieldset>
+		<legend>insert into gnuboard.studying</legend>
+
+	category: <input type="text" name="category" >
+	subject: <input type="text" name="subject" >
+
+	contents: <input type="text" name="contents">
+        radio: <input type="radio" name="radio1">radio1
+               <input type="radio" name="radio2">radio2
+	checkbox: <input type="checkbox" name="checkm">maile
+	checkbox: <input type="checkbox" name="checkf">femaile
+	select: <select name="_subject">
+		<option value="html">html</option>
+		<option value="css">css</option>
+		<option value="php">php</option>
+		</select>
+		<br>
+
+
+	학과: <input type="text" name="학과" list="list1" >
+		<datalist id="list1">
+			<option value="컴퓨터공학과"></option>
+			<option value="영어영문과"></option>
+			<option value="경영학과"></option>
+			<option value="사회체육과"></option>
+		</datalist>
+	textarea: <textarea name="texta"></textarea>
+	<input type="submit" value="제출합니다." style="height:100px;width:200px"  / >
+	</fieldset>
+</form>
+<br>
+
+
+
+
+	<a href="php/2.php">php/2.php</a><br>
+	
+	<a href="php/insert.php">php/insert.php </a><br>
+	<a href="php/insert_name.php">php/insert_name.php </a><br>
+	<a href="php/delete.php">php/delete.php </a><br>
+	<a href="php/session_test.php">php/session_test.php </a><br>
+	<a href="php/session_test_set.php">php/session_test_set.php </a><br>
+	<a href="php/session_test_get.php">php/session_test_get.php </a><br>
+	<a href="php/php_html.php">php/php_html.php </a><br>
+  <a href="delete_studying.html">delete_studying.html</a><br>
+  <a href="studying.html">studying.html</a><br>
+  <a href="studying.html">studying.html</a><br>
+    <a href="new.html">new.html</a><br>
+  <a href="/php/SERVER_info.php">/php/SERVER_info.php</a><br>
+</body>
+</html>
+

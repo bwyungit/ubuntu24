@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--filename=./index2.html-->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>insert into gnuboard.studying</title>
+<style>
+.parent{
+display: flex;
+background:red;
+}
+.left{
+flex: 1;
+background: white;
+}
+.right{
+flex: 3;
+
+}
+
+
+
+
+</style>
+
+</head>
+<body>
+</body>
+<p>this page is ./index2.html</p>
+<form method="get" accept-charset="utf-8" action="import_index2.php">
+	<fieldset>
+	<legend>insert into gnuboard.studying</legend>
+		<label> category: <input type="text" name="category" ></label>
+			<label for ="subject">subject:</label>
+		<input type="text" name="subject" id="subject" >
+		
+	contents: <input type="text" name="contents" style="width:500px">
+	<input type="submit" value="제출" style="height:30px;width:50px"  / >
+	</fieldset>
+</form>
+
+<div class="parent" >
+	<div class="left">
+		<a href="php/2.php">php/2.php</a><br>
+	    <a href="3.php">3.php </a><br>
+	    <a href="php/4.php">php/4.php </a><br>
+	    <a href="php/5.php">php/5.php </a><br>
+	    <a href="php/insert.php">php/insert.php </a><br>
+	    <a href="php/insert_name.php">php/insert_name.php </a><br>
+	    <a href="php/delete.php">php/delete.php </a><br>
+	</div>
+	<div class="right">
+		<a href="3.php">3.php </a><br>
+		<a href="php/4.php">php/4.php </a><br>
+		<a href="php/5.php">php/5.php </a><br>
+		<a href="php/insert.php">php/insert.php </a><br>
+	</div>
+</div>
+
+</html>
